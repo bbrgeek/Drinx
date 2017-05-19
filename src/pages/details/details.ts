@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BarsPage } from '../bars/bars';
+import { BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner'
 /**
  * Generated class for the DetailsPage page.
  *
@@ -15,8 +16,9 @@ import { BarsPage } from '../bars/bars';
 export class DetailsPage {
   mail : string;
   pass : string;
+  option: BarcodeScannerOptions;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barcode: BarcodeScanner) {
     this.mail = navParams.get('mail');
     this.pass = navParams.get('pass');
     console.log(this.mail);
@@ -25,5 +27,13 @@ export class DetailsPage {
 
   private listBars() {
     this.navCtrl.push(BarsPage);
+  }
+
+  async consume(){
+    console.log("QR scanning");
+    const result= await this.barcode.scan();
+    console.log(result);
+
+
   }
 }
