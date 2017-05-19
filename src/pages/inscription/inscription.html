@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title id="title">
+      Inscription
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Prénom</ion-label>
+    <ion-input [(ngModel)]="prenom" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>Nom</ion-label>
+      <ion-input [(ngModel)]="nom" type="text"></ion-input>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Telephone</ion-label>
+      <ion-input [(ngModel)]="phone" type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input [(ngModel)]="mail" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Mot de Passe</ion-label>
+      <ion-input [(ngModel)]="pass" type="password"></ion-input>
+  </ion-item>
+</ion-list>
+<div id="divButton">
+<button (tap)="ValidInscription()" color="dark" ion-button large>inscription</button>
+</div>
+</ion-content>

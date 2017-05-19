@@ -1,0 +1,23 @@
+page-home {
+  #title {
+    text-align: center;
+  }
+  #fbk, #divButton {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  #fbk{
+    background: #3b5998;
+    width: 255px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .mybtn{
+    width: 165px;
+  }
+  #divButton {
+    padding-top: 10px;
+
+  }
+}

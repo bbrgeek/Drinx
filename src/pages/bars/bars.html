@@ -1,0 +1,40 @@
+<!--
+  Generated template for the BarsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>bars</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <ion-icon name="beer"></ion-icon>
+      </ion-avatar>
+      <h2>Paxton'head</h2>
+      <p>264 Rue de Bourgogne, 45000 Orléans</p>
+    </ion-item>
+    <ion-card-content>
+      <p>Bar orléannais très sympa, lieu sympa. Toute sorte de boisson proposer, tapas et autre à volontés</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col (tap)="detailsBars()">
+        <button ion-button icon-left clear small>
+          <ion-icon name="beer" ></ion-icon>
+          <div>voir la carte..</div>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>
