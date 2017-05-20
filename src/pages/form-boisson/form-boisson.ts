@@ -72,33 +72,4 @@ export class FormBoissonPage {
   });
   prompt.present();
 }
-
-
-showOptions(songId, songTitle) {
-  let actionSheet = this.actionSheetCtrl.create({
-    title: 'What do you want to do?',
-    buttons: [
-      {
-        text: 'Delete Song',
-        role: 'destructive',
-        handler: () => {
-          this.removeSong(songId);
-        }
-      },{
-        text: 'Update title',
-        handler: () => {
-          this.updateSong(songId, songTitle);
-        }
-      },{
-        text: 'Cancel',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }
-    ]
-  });
-  actionSheet.present();
-}
-
 }

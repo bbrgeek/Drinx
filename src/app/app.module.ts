@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation';
+import { BarcodeScanner} from '@ionic-native/barcode-scanner';
 import {
  GoogleMaps,
  GoogleMap,
@@ -81,6 +82,7 @@ export const firebaseConfig = {
     Geolocation,
     GoogleMaps,
     Firebase,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
