@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 /**
  * Generated class for the InvitePage page.
  *
@@ -13,9 +13,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'invite.html',
 })
 export class InvitePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  users: FirebaseListObservable<any[]>;
+    constructor(public navCtrl: NavController, public navParams: NavParams, afDB: AngularFireDatabase) {
+      this.users = afDB.list('/users');
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InvitePage');

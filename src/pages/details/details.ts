@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BarsPage } from '../bars/bars';
+import { FormBoissonPage } from '../form-boisson/form-boisson';
+
 /**
  * Generated class for the DetailsPage page.
  *
@@ -25,5 +27,9 @@ export class DetailsPage {
 
   private listBars() {
     this.navCtrl.push(BarsPage);
+  }
+
+  private formBoisson() {
+    this.navCtrl.push(FormBoissonPage);
   }
 }

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DetailsPage } from '../details/details';
 import { MapPage } from '../map/map';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 /**
  * Generated class for the InscriptionPage page.
  *
@@ -20,18 +22,29 @@ export class InscriptionPage {
   phone : string;
   pass : string;
 
-  constructor(public navCtrl: NavController) {
+  users: FirebaseListObservable<any[]>;
+    constructor(public navCtrl: NavController, public alertCtrl: AlertController, afDB: AngularFireDatabase) {
+      this.users = afDB.list('/users');
+    }
+    private inscription() {
+       this.navCtrl.push(DetailsPage, {prenom: this.prenom,
+       nom: this.nom,
+       mail: this.mail,
+       phone: this.phone,
+       pass: this.pass});
+    }
+    private map() {
+      this.navCtrl.push(MapPage);
+    }
 
-  }
-  private inscription() {
-     this.navCtrl.push(DetailsPage, {prenom: this.prenom,
-     nom: this.nom,
-     mail: this.mail,
-     phone: this.phone,
-     pass: this.pass});
-  }
-  private map() {
+private ValidInscription() {
+    this.users.push({
+      prenom: this.prenom,
+      nom: this.nom,
+      mail: this.mail,
+      phone: this.phone,
+      pass: this.pass
+    });
     this.navCtrl.push(MapPage);
   }
-
 }
